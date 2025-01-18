@@ -33,6 +33,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
@@ -43,6 +47,7 @@ module.exports = {
       },
     ],
   },
+
   resolve: {
     alias: { '@': path.resolve(__dirname, 'src') },
     extensions: ['.tsx', '.ts', '.js', '.jsx'],

@@ -1,0 +1,24 @@
+@use "@/styles/_variables.scss" as *;
+
+.header {
+  background-color: $blue;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+  margin-bottom: 44px;
+
+  &__link {
+    color: $white;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    padding: 23px;
+    transition: $main-transition;
+
+    &:hover {
+      background-color: $blue-hover;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+}
