@@ -23,6 +23,7 @@ export default [
       "unused-imports": unusedConfig
     },
     rules: {
+      "@stylistic/brace-style": "off",
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "@stylistic/arrow-parens": "off",

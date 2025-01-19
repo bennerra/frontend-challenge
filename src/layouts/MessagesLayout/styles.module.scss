@@ -1,0 +1,19 @@
+@use "@/styles/variables.module" as *;
+
+.messagesLayout {
+  width: 100%;
+
+  &__message {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    color: $grey-text;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid $grey-text;
+    z-index: 10;
+    text-align: center;
+  }
+}

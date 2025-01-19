@@ -1,21 +1,27 @@
-import { NavLink } from 'react-router';
+import classNames from 'classnames/bind';
+import { NavLink, useLocation } from 'react-router';
 
 import * as styles from './style.module.scss';
 
+import { AppRoutes } from '@/constants/paths';
 import { Container } from '@/layouts/Container';
 
 const Links = [
   {
     name: 'Все котики',
-    link: '/',
+    link: AppRoutes.MAIN,
   },
   {
     name: 'Любимые котики',
-    link: '/',
+    link: AppRoutes.FAVORITES,
   },
 ];
 
+const cx = classNames.bind(styles);
+
 export const Header = () => {
+  const { pathname } = useLocation();
+
   return (
     <header className={styles.header}>
       <Container>
@@ -23,7 +29,9 @@ export const Header = () => {
           {Links.map((item) => (
             <NavLink
               key={item.name}
-              className={styles.header__link}
+              className={cx('header__link', {
+                isActive: pathname === item.link,
+              })}
               to={item.link}
             >
               {item.name}

@@ -1,0 +1,33 @@
+// Colors
+
+$white: #ffffff;
+$blue: #2196f3;
+$blue-hover: #1e88e5;
+$grey-shadow: #00000610;
+$grey-text: #232323;
+$light-grey-shadow: #00000740;
+$light-grey-bg: #eeeeee;
+
+// Breakpoints
+
+$screen-xxl: 1920px;
+$screen-xl: 1600px;
+$screen-lg: 1400px;
+$screen-mxl: 1200px;
+$screen-md: 1024px;
+$screen-sm: 768px;
+$screen-xs: 320px;
+
+:export {
+  screenXXL: $screen-xxl;
+  screenXL: $screen-xl;
+  screenLG: $screen-lg;
+  screenMXL: $screen-mxl;
+  screenMD: $screen-md;
+  screenSM: $screen-sm;
+  screenXS: $screen-xs;
+}
+
+// Transitions
+
+$main-transition: all 0.3s ease-in-out;

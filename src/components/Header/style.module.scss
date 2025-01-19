@@ -1,9 +1,13 @@
-@use "@/styles/_variables.scss" as *;
+@use "@/styles/variables.module" as *;
 
 .header {
   background-color: $blue;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 4px 4px $grey-shadow;
   margin-bottom: 44px;
+
+  @media(max-width: $screen-sm) {
+    margin-bottom: 30px;
+  }
 
   &__link {
     color: $white;
@@ -14,6 +18,10 @@
     transition: $main-transition;
 
     &:hover {
+      background-color: $blue-hover;
+    }
+
+    &.isActive {
       background-color: $blue-hover;
     }
   }
