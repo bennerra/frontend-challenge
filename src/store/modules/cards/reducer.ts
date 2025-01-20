@@ -1,8 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit';
 
+import { type CardDataWithFavorite } from '@/types/cards';
 import { changeIsFavorite } from '@/store/modules/cards/actions';
 import { getCardList } from '@/store/modules/cards/async-actions';
-import { type CardDataWithFavorite } from '@/components/CardList/types';
 
 type Cards = {
   error: string;
@@ -26,7 +26,14 @@ export const cards = createReducer(initialValue, (builder) =>
       }
 
       if (Array.isArray(action.payload)) {
-        state.cards = action.payload;
+        if (state.cards) {
+          state.cards = [...state.cards, ...action.payload];
+        }
+
+        if (!state.cards) {
+          state.cards = action.payload;
+        }
+
         state.error = '';
       }
 

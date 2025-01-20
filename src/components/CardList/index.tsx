@@ -4,8 +4,8 @@ import { type FC } from 'react';
 
 import * as styles from './style.module.scss';
 
+import { type CardDataWithFavorite } from '@/types/cards';
 import { Card } from '@/ui/Card';
-import { type CardDataWithFavorite } from '@/components/CardList/types';
 
 type Props = {
   cards: CardDataWithFavorite[] | null;
@@ -40,8 +40,9 @@ export const CardList: FC<Props> = ({
     <>
       {cards && (
         <div className={styles.cardList}>
-          {cards.map((item) => (
+          {cards.map((item, index) => (
             <Card
+              index={index}
               changeIsFavorite={changeIsFavorite}
               key={item.id}
               card={item}

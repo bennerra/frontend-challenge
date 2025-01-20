@@ -23,6 +23,7 @@ export default [
       "unused-imports": unusedConfig
     },
     rules: {
+      "@stylistic/operator-linebreak": "off",
       "@stylistic/brace-style": "off",
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",

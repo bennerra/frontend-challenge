@@ -1,4 +1,4 @@
-import { type CardDataWithFavorite } from '@/components/CardList/types';
+import { type CardDataWithFavorite } from '@/types/cards';
 
 const DB_NAME = 'FavoritesDB';
 const DB_VERSION = 2;

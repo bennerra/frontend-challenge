@@ -1,7 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 
+import { type CardDataWithFavorite } from '@/types/cards';
 import { changeIsFavoriteList } from '@/store/modules/favoriteCards/actions';
-import type { CardDataWithFavorite } from '@/components/CardList/types';
 import { getCardFavoriteList } from '@/store/modules/favoriteCards/async-actions';
 
 type FavoriteCards = {

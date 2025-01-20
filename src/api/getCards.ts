@@ -1,12 +1,17 @@
 import { apiInstance } from '@/api/apiInstance';
-import { type CardData } from '@/components/CardList/types';
 import { ApiRoutes } from '@/constants/apiRoutes';
+import { type CardData } from '@/types/cards';
 
-export const getCards = async () => {
+const LIMIT_CARDS = 40;
+
+export const getCards = async (page: number) => {
   try {
-    const response = await apiInstance(`${ApiRoutes.CARDS}search?limit=10`, {
-      method: 'get',
-    });
+    const response = await apiInstance(
+      `${ApiRoutes.CARDS}search?limit=${LIMIT_CARDS}&page=${page}`,
+      {
+        method: 'get',
+      },
+    );
     if (response && response.data) {
       return response.data.map((item: CardData) => {
         return { isFavorite: false, ...item };
